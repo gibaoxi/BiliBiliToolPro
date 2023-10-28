@@ -40,7 +40,7 @@ jobs:
     # 发布
     - name: Publish
       run: |
-        cd ./src/Ray.BiliBiliToolPro.Console
+        cd ./src/Ray.BiliBiliTool.Console
         dotnet publish --configuration Release --self-contained false --output ./bin/Publish/net5-dependent
        
     # 运行
@@ -93,5 +93,5 @@ jobs:
         Ray_Serilog__WriteTo__0__Args__restrictedToMinimumLevel: ${{secrets.CONSOLELOGLEVEL}}
         Ray_Serilog__WriteTo__0__Args__outputTemplate: ${{secrets.CONSOLELOGTEMPLATE}} 
       run: |
-        cd ./src/Ray.BiliBiliToolPro.Console/bin/Publish/net5-dependent
-        dotnet Ray.BiliBiliToolPro.Console.dll -closeConsoleWhenEnd=1 ${{secrets.OTHERCONFIGS}}
+        cd ./src/Ray.BiliBiliTool.Console/bin/Publish/net5-dependent
+        dotnet Ray.BiliBiliTool.Console.dll -closeConsoleWhenEnd=1 ${{secrets.OTHERCONFIGS}}
